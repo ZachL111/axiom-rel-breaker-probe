@@ -1,0 +1,17 @@
+{
+  "repo": "axiom-rel-breaker-probe",
+  "thresholds": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 4,
+    "ship": 150,
+    "watch": 115
+  },
+  "terms": [
+    "budget pressure",
+    "failure width",
+    "recovery gap",
+    "runbook drift"
+  ]
+}
