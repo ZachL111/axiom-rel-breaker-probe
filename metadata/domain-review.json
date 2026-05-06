@@ -1,0 +1,73 @@
+{
+  "repo": "axiom-rel-breaker-probe",
+  "language": "Solidity",
+  "category": "Reliability",
+  "goal": "Develop a Solidity command-oriented project for breaker scenarios with deny and allow fixtures, explainable decision traces, and no network dependency.",
+  "review_model": {
+    "terms": [
+      "budget pressure",
+      "failure width",
+      "recovery gap",
+      "runbook drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "budget pressure",
+      "signal": 47,
+      "slack": 35,
+      "drag": 22,
+      "confidence": 50,
+      "score": 113,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "failure width",
+      "signal": 59,
+      "slack": 42,
+      "drag": 19,
+      "confidence": 83,
+      "score": 186,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "recovery gap",
+      "signal": 78,
+      "slack": 32,
+      "drag": 17,
+      "confidence": 79,
+      "score": 216,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "runbook drift",
+      "signal": 83,
+      "slack": 53,
+      "drag": 21,
+      "confidence": 53,
+      "score": 209,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "budget pressure",
+      "signal": 71,
+      "slack": 54,
+      "drag": 15,
+      "confidence": 72,
+      "score": 223,
+      "lane": "ship"
+    }
+  ]
+}
